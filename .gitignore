@@ -2,6 +2,10 @@
 .idea
 *.log
 META-INF/
+build/
 *.iml
 out/
 target/
+nbproject/
+build.xml
+manifest.mf
