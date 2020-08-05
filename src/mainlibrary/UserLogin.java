@@ -5,10 +5,8 @@
  */
 package mainlibrary;
 
-import org.mindrot.jbcrypt.BCrypt;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Validator;
-import org.owasp.esapi.reference.DefaultValidator;
 
 import javax.swing.*;
 
@@ -170,8 +168,8 @@ public class UserLogin extends javax.swing.JFrame {
         String Pass = String.valueOf(password.getPassword());
 
         Validator validator = ESAPI.validator();
-        boolean validUserName = validator.isValidInput("Username", usernameParam, "Username", 20, false);
-        boolean validUserPassword = validator.isValidInput("Username", Pass, "Password", 20, false);
+        boolean validUserName = validator.isValidInput("Username", usernameParam, "Username", 32, false);
+        boolean validUserPassword = validator.isValidInput("Password", Pass, "Password", 32, false);
 
 
         System.out.println(usernameParam + " " + Pass);

@@ -12,7 +12,15 @@ public class SamplePasswordHashGenerator {
     public static void main(String[] args) {
 
         SamplePasswordHashGenerator passwordHashGenerator = new SamplePasswordHashGenerator();
-        System.out.println(passwordHashGenerator.hashPassword("sami1234"));
+
+        String plainPassword = "Saman1399@Test";
+        String hashPassword = passwordHashGenerator.hashPassword(plainPassword);
+
+        System.out.println(hashPassword);
+
+        System.out.println(passwordHashGenerator.checkPassword(plainPassword, hashPassword));
+
+
 
     }
 
