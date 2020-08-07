@@ -31,8 +31,8 @@ INSERT INTO library.Books (BookID, BookName, Genre, Author, Publisher, Shelf, Ro
 INSERT INTO library.IssuedBook (BookID, UserID, IssueDate, ReturnDate) VALUES (5, 1, '2016-11-17', '2016-12-02');
 INSERT INTO library.IssuedBook (BookID, UserID, IssueDate, ReturnDate) VALUES (12, 2, '2016-11-17', '2016-12-02');
 INSERT INTO library.IssuedBook (BookID, UserID, IssueDate, ReturnDate) VALUES (6, 2, '2016-11-17', '2016-12-02');
-INSERT INTO library.Librarian (LibrarianID, FullName, UserName, Password, Email) VALUES (1, 'Enco Sier', 'Encosier', '1234', 'enco.cs.doc@gmail.com');
-INSERT INTO library.Librarian (LibrarianID, FullName, UserName, Password, Email) VALUES (2, 'Leloush Britannia', 'Zero', '9876', 'leloush.zero@bitannia.com');
+INSERT INTO library.Librarian (LibrarianID, FullName, UserName, Password, Email) VALUES (1, 'Enco Sier', 'Encosier', 'Saman1399@Test', 'enco.cs.doc@gmail.com');
+INSERT INTO library.Librarian (LibrarianID, FullName, UserName, Password, Email) VALUES (2, 'Leloush Britannia', 'Zero', 'Saman1399@Test', 'leloush.zero@bitannia.com');
 INSERT INTO library.Publisher (PublisherID, PublisherName) VALUES (1, 'hjkhdkj');
 INSERT INTO library.Publisher (PublisherID, PublisherName) VALUES (2, 'Pottermore');
 INSERT INTO library.Publisher (PublisherID, PublisherName) VALUES (3, 'dsd');
@@ -65,5 +65,5 @@ INSERT INTO library.Users (UserID, UserPass, RegDate, UserName, Email, FailedCou
 INSERT INTO library.Users (UserID, UserPass, RegDate, UserName, Email, FailedCount, LockedUntilDateTime) VALUES (6, '', '2020-07-14', '`drop Users;`', '', 0, null);
 INSERT INTO library.Users (UserID, UserPass, RegDate, UserName, Email, FailedCount, LockedUntilDateTime) VALUES (7, '', '2020-07-14', ''';drop all Users;', '', 0, null);
 INSERT INTO library.Users (UserID, UserPass, RegDate, UserName, Email, FailedCount, LockedUntilDateTime) VALUES (8, 'klmlmlklm', '2020-07-21', ',klkmlkqlkmq', 'lkmlmlm', 0, null);
-INSERT INTO library.Users (UserID, UserPass, RegDate, UserName, Email, FailedCount, LockedUntilDateTime) VALUES (9, '$2a$10$MExjLllDagEjvQiocvIkTuvZnCfTTVLAS3r9Hpyilb.1NzWQSQ1kW', '2020-08-04', 'sami', 'sami@gmail.com', 4, '2020-08-06');
+INSERT INTO library.Users (UserID, UserPass, RegDate, UserName, Email, FailedCount, LockedUntilDateTime) VALUES (9, '$2a$10$MExjLllDagEjvQiocvIkTuvZnCfTTVLAS3r9Hpyilb.1NzWQSQ1kW', '2020-08-04', 'sami', 'sami@gmail.com', 0, null);
 INSERT INTO library.Users (UserID, UserPass, RegDate, UserName, Email, FailedCount, LockedUntilDateTime) VALUES (10, '$2a$10$z4lMKFOWkw4TU.8xtKNadOrGRNKZWCzEvd4dpyX8kZem3kvm3LSR6', '2020-08-05', 'Test', 'test@gmail.com', 0, null);

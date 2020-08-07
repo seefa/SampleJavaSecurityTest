@@ -42,7 +42,7 @@ class LoginUIComponentUtility extends javax.swing.JFrame {
         pageLabel.setText(pageTitle);
 
         loginButton.setText("Login");
-        loginButton.addActionListener(this::jButton1ActionPerformed);
+        loginButton.addActionListener(evt -> jButton1ActionPerformed(evt, pageTitle));
 
         backButton.setText("Back");
         backButton.addActionListener(this::jButton2ActionPerformed);
@@ -123,8 +123,8 @@ class LoginUIComponentUtility extends javax.swing.JFrame {
 
     }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        String usernameParam= username.getText();
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt, String pageTitle) {
+        String usernameParam = username.getText();
         String Pass = String.valueOf(password.getPassword());
 
         Validator validator = ESAPI.validator();
@@ -133,9 +133,17 @@ class LoginUIComponentUtility extends javax.swing.JFrame {
 
 
         System.out.println(usernameParam + " " + Pass);
-        if (validUserName && validUserPassword && UsersDao.validate(usernameParam, Pass)) {
-            this.dispose();
-            UserLoginSuccess.main(new String[]{usernameParam, Pass});
+        if (validUserName && validUserPassword && (
+                (pageTitle.contains("User") && UsersDao.validate(usernameParam, Pass)) ||
+                        (pageTitle.contains("Librarian") && LibrarianDao.validate(usernameParam, Pass))
+        )) {
+            if(pageTitle.contains("User")) {
+                this.dispose();
+                UserLoginSuccess.main(new String[]{usernameParam, Pass});
+            } else {
+                this.dispose();
+                LibrarianSuccess.main(new String[]{usernameParam, Pass});
+            }
 
         } else {
             JOptionPane.showMessageDialog(LoginUIComponentUtility.this, "Sorry, Username or Password Error", "Login Error!", JOptionPane.ERROR_MESSAGE);
